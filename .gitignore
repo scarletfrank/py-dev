@@ -1,0 +1,4 @@
+.vscode
+project/dist/
+project/build/
+project/__pycache__/
