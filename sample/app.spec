@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['error-handle.py'],
-             pathex=['F:\\study\\py-dev\\build'],
+a = Analysis(['app.py'],
+             pathex=['F:\\study\\py-dev\\sample'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -21,12 +21,12 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='error-handle',
+          name='app',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True )
+          console=False , icon='resources\\favicon.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -34,4 +34,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='error-handle')
+               name='app')

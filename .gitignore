@@ -1,4 +1,4 @@
 .vscode
-project/dist/
-project/build/
-project/__pycache__/
+sample/dist/
+sample/build/
+sample/__pycache__/
