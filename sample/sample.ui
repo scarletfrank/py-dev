@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>656</width>
-    <height>438</height>
+    <width>611</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,10 +21,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>30</y>
       <width>164</width>
-      <height>228</height>
+      <height>222</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -462,6 +462,9 @@
        </property>
        <property name="text">
         <string>1</string>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::DelayedPopup</enum>
        </property>
       </widget>
      </item>
@@ -2189,7 +2192,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2" rowspan="2">
+     <item row="1" column="2">
       <widget class="QToolButton" name="toolButton_6">
        <property name="palette">
         <palette>
@@ -2620,7 +2623,7 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0" rowspan="2">
+     <item row="2" column="0">
       <widget class="QToolButton" name="toolButton_7">
        <property name="palette">
         <palette>
@@ -3051,7 +3054,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="2" column="1">
       <widget class="QToolButton" name="toolButton_8">
        <property name="palette">
         <palette>
@@ -3482,7 +3485,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
+     <item row="2" column="2">
       <widget class="QToolButton" name="toolButton_9">
        <property name="palette">
         <palette>
@@ -3913,7 +3916,7 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <widget class="QToolButton" name="toolButton_0">
        <property name="palette">
         <palette>
@@ -4344,7 +4347,35 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>50</y>
+      <width>153</width>
+      <height>109</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>HelloWorld</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit"/>
+     </item>
+     <item>
       <widget class="QToolButton" name="btn_clear">
        <property name="palette">
         <palette>
@@ -4763,8 +4794,10 @@
        </property>
        <property name="font">
         <font>
-         <family>Arial Black</family>
-         <pointsize>21</pointsize>
+         <family>Arial</family>
+         <pointsize>16</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <property name="autoFillBackground">
@@ -4777,56 +4810,66 @@
      </item>
     </layout>
    </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>30</y>
-      <width>153</width>
-      <height>109</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>HelloWorld</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-     <item>
-      <widget class="QToolButton" name="btn_label">
-       <property name="text">
-        <string>test</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>656</width>
+     <width>611</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>327</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -24,18 +24,21 @@ class MainWindow(QtWidgets.QMainWindow):
         fileh.close()
         
         # 组件绑定
-        self.toolButton_1.clicked.connect(self.addone)
-        self.btn_clear.clicked.connect(self.clsLine)
-        self.btn_label.clicked.connect(self.changeLabel)
+        self.toolButton_1.clicked.connect(self.num_add(1))
+        self.toolButton_2.clicked.connect(self.num_add(2))
+        self.toolButton_3.clicked.connect(self.num_add(3))
+        self.toolButton_4.clicked.connect(self.num_add(4))
+        self.toolButton_5.clicked.connect(self.num_add(5))
+        self.toolButton_6.clicked.connect(self.num_add(6))
+        self.toolButton_7.clicked.connect(self.num_add(7))
+        self.toolButton_8.clicked.connect(self.num_add(8))
+        self.toolButton_9.clicked.connect(self.num_add(9))
+        self.toolButton_0.clicked.connect(self.num_add(0))
 
-    def addone(self):
-        self.lineEdit.setText(self.lineEdit.text() + "1")
-
-    def clsLine(self):
-        self.lineEdit.clear()
-
-    def changeLabel(self):
-        self.label.setText("newHelloWorld")
+    def num_add(self, n):
+        def callnum():
+            self.lineEdit.setText(self.lineEdit.text() + str(n))
+        return callnum # 带参数的情况下，要返回对应参数的函数
 
 
 if __name__ == '__main__':
