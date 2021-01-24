@@ -1,0 +1,19 @@
+version: '3.3'
+
+services: 
+  web:
+    build: 
+      context: ./app
+    command: python cron.py
+    volumes:
+      - media_volume:/home/app/web/mediafiles
+  nginx:
+    build: 
+      context: ./nginx
+    volumes: 
+      - media_volume:/home/app/web/mediafiles
+    ports: 
+      - 80:80
+    
+volumes:
+  media_volume:
