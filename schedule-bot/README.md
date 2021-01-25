@@ -21,4 +21,9 @@ python3 cron-test.py > output.log
 
 ## 用Docker持久化容器运行
 
-> 还没写完。upload的部分感觉没写对，8001端口没监听到。
+> 还没写完。upload的部分感觉没写对，8001端口没监听到，原来是我忘记添加了...
+
+```bash
+docker-compose up -d --build
+docker-compose down -v
+```
