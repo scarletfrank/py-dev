@@ -13,7 +13,6 @@ services:
     volumes: 
       - media_volume:/home/app/web/mediafiles
     ports: 
-      - 80:80
       - 8001:8001
     # 昨晚忘记打开上传用端口了
     
