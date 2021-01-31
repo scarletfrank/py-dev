@@ -27,3 +27,8 @@ python3 cron-test.py > output.log
 docker-compose up -d --build
 docker-compose down -v
 ```
+
+### alpine 时区设置
+
+- [wiki](https://wiki.alpinelinux.org/wiki/Setting_the_timezone)
+- [issue](https://github.com/gliderlabs/docker-alpine/issues/136)

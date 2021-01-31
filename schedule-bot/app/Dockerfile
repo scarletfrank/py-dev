@@ -25,6 +25,12 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/re
 RUN apk update \
     && apk add gcc python3-dev musl-dev
 
+# TIMEZONE
+RUN apk add --no-cache tzdata
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo "Asia/Shanghai" >  /etc/timezone
+RUN date
+
 
 # install ffmpeg
 RUN apk add --no-cache ffmpeg
