@@ -1,25 +1,34 @@
-# 
+# README
 
-## Windows & Linux
+## 环境
 
-二者通用的脚本，不过配置方式不太一样。都要保证`ffmpeg`在路径上。
-
+- Docker虚拟化 （WSL Or Ubuntu 18.04)
+- python:3.8-alpine
+- Node.js LTS
+- Minyami 4.2.2
 
 ## 页面录制逻辑
 
-`ffmpeg`对`m3u8`定点录制，录制三十分钟。感觉要提前一点触发任务，测试的时候出现了`403`问题
+### m3u8 地址
 
-```bash
-# [tcp @ 0x55bce8d530c0] Connection to tcp://fms2.uniqueradio.jp:443 failed: Connection timed out
-# https://fms2.uniqueradio.jp/agqr10/aandg1.m3u8: Connection timed out
-python3 cron-test.py > output.log
-# 单步执行
+1. `https://fms2.uniqueradio.jp/agqr10/aandg1.m3u8`
+2. `https://www.uniqueradio.jp/agplayerf/hls/HLS_Layer1-cdn.m3u8` 
+
+关于`2`，参考在Minyami提的一个[issue](https://github.com/Last-Order/Minyami/issues/73)
+
+
+`ffmpeg`对`m3u8`定点录制，录制三十分钟，读取文件内容。
+
+除了`403`，我印象中确实出现过IO类的报错。
+
+```log
+[tcp @ 0x55bce8d530c0] Connection to tcp://fms2.uniqueradio.jp:443 failed: Connection timed out
 ```
 
-单步执行
+### 
 
 
-## 用Docker持久化容器运行
+## Docker容器运行
 
 > 还没写完。upload的部分感觉没写对，8001端口没监听到，原来是我忘记添加了...
 

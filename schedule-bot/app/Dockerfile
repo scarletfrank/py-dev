@@ -35,6 +35,14 @@ RUN date
 # install ffmpeg
 RUN apk add --no-cache ffmpeg
 
+# install nodejs-lts
+
+RUN apk add --update nodejs npm
+
+RUN npm config set registry https://registry.npm.taobao.org --global
+
+RUN npm install minyami -g
+
 # install dependencies
 # ...还是需要先设置pip 源
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
