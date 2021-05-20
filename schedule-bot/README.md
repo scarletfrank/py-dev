@@ -34,7 +34,19 @@
 
 ```bash
 docker-compose up -d --build
-docker-compose down -v
+docker-commpose down
+docker-compose down -v #会把volumes删掉
+
+```
+
+## 查看容器日志
+
+> VS Code 只显示最近1000条，更细致的查询得自己加参数
+
+```bash
+docker logs --tail 1000 -f 35e3c6458c2310b28fbb5dfd2d5098a5aca9c1ac3796d7c9ac7274257c0edcca 
+docker logs --since "2021-02-20" --tail 1000 -f 35e3c6458c2310b28fbb5dfd2d5098a5aca9c1ac3796d7c9ac7274257c0edcca 
+docker inspect --format='{{.LogPath}}' 35e3c6458c2310b28fbb5dfd2d5098a5aca9c1ac3796d7c9ac7274257c0edcca 
 ```
 
 ### alpine 时区设置
