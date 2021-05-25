@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+  neo4j:
+    build: 
+      context: ./neo4j
+    restart: unless-stopped
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - conf_volume:/conf
+      - data_volume:/data
+      - import_volume:/import
+      - log_volume:/logs
+      - plugins_volume:/plugins
+  web:
+    build: 
+      context: ./app
+    command:
+      flask run --host=0.0.0.0
+    ports: 
+      - 8080:5000
+    environment: # => a .env file
+      FLASK_APP: flaskr
+      FLASK_ENV: development
+      
+
+volumes: 
+  conf_volume:
+  data_volume:
+  import_volume:
+  log_volume:
+  plugins_volume:
