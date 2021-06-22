@@ -21,11 +21,13 @@ class MainWindow(QtWidgets.QMainWindow):
         fileh.open(QtCore.QFile.ReadOnly)
         uic.loadUi(fileh, self)
         fileh.close()
-        self.lock = Fernet(b'pwdhs=')
+        self.lock = Fernet(b'8GiEHryrOId7fJd9K8CeMAuubCjsL1UX5DDZWARByCE=')
         # 绑定关系
         self.encodeButton.clicked.connect(self.encodeText)
         self.decodeButton.clicked.connect(self.decodeText)
         self.pushButton.clicked.connect(self.fileDialog)
+        # 
+        menubar = self.menuBar()
     
     def fileDialog(self):
         options = QtWidgets.QFileDialog.Options()
