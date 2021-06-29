@@ -8,11 +8,15 @@ services:
       - 7474:7474
       - 7687:7687
     volumes:
-      - conf_volume:/conf
-      - data_volume:/data
-      - import_volume:/import
-      - log_volume:/logs
-      - plugins_volume:/plugins
+      - conf_volume:/var/lib/neo4j/conf
+      - data_volume:/var/lib/neo4j/data
+      - import_volume:/var/lib/neo4j/import
+      - log_volume:/var/lib/neo4j/logs
+      - plugins_volume:/var/lib/neo4j/plugins
+    # environment:
+      # - NEO4J_apoc_import_file_enabled=true
+      # - NEO4J_dbms_shell_enabled=true
+      # - NEO4JLABS_PLUGINS=["apoc", "graph-data-science"]
   web:
     build: 
       context: ./app

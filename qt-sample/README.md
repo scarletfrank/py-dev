@@ -1,6 +1,8 @@
 # README
 
 > 草稿阶段
+> 换个思路 
+> 做个[计算器](https://realpython.com/python-pyqt-gui-calculator/#creating-a-calculator-with-python-and-pyqt)
 
 ## 简介
 
