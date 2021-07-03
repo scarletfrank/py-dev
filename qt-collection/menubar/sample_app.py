@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtWidgets import QSpinBox, QAction, QApplication, QLabel, QMainWindow, QMenu, QToolBar
+from qt_material import apply_stylesheet
 
 class Window(QMainWindow):
     """Main Window."""
@@ -100,6 +101,8 @@ class Window(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    # setup stylesheet
+    apply_stylesheet(app, theme='light_cyan_500.xml')
     win = Window()
     win.show()
     sys.exit(app.exec_())
