@@ -1,0 +1,10 @@
+torch
+torchvision
+torchaudio
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+torch-geometric
+# pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
+# pip install -r requirements.txt -f https://pytorch-geometric.com/whl/torch-1.9.0+cpu.html
