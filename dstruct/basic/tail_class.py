@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+"""
+说明：堆栈的类写法
+来源：Programming Python
+作者：scarlet
+备注：列表尾作为栈顶
+"""
 class error(Exception): pass
 
 class Stack:
