@@ -3,7 +3,7 @@ FROM python:3.8-slim
 # set work directory
 WORKDIR /usr/src/app
 
-# RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 RUN pip install --upgrade pip 
 RUN pip install flake8
 COPY . .
